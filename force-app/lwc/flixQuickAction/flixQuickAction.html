@@ -1,0 +1,52 @@
+<template>
+    <!-- The lightning-card component is used to display a styled card layout -->
+    <lightning-card title="Account Contract Clauses" icon-name="custom:custom63">
+        
+        <!-- The div with a margin around the medium size -->
+        <div class="slds-m-around_medium">
+            <!-- Check if there are any clauses to display -->
+            <template if:true={clauses.length}>
+                
+                <!-- Scrollable div for the table -->
+                <div class="scrollable-table">
+                    <!-- Table to display the clauses -->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Name">Name</div> <!-- Corrected API Name -->
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Billing Country">Billing Country</div> <!-- Corrected API Name -->
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Iterate over the clauses and display each one in a row -->
+                            <template for:each={clauses} for:item="clause">
+                                <tr key={clause.Id}>
+                                    <td data-label="Name" class="multiline-text">
+                                        <a href={clause.url} target="_blank">{clause.Name__c}</a>
+                                    </td>
+                                    <td data-label="Billing Country" class="multiline-text">
+                                        {clause.Billing_Country__c}
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Fixed position buttons for Proceed and Close actions -->
+                <div class="slds-button-group fixed-buttons slds-float_right slds-m-top_medium">
+                    <lightning-button label="Proceed" onclick={handleProceed} variant="brand" class="slds-m-right_small"></lightning-button>
+                    <lightning-button label="Close" onclick={handleClose} variant="neutral"></lightning-button>
+                </div>
+            </template>
+            <!-- Display a message if no clauses are found -->
+            <template if:false={clauses.length}>
+                <p>No contract clauses found for this Account's billing country.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

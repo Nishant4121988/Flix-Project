@@ -1,0 +1,24 @@
+.small-card {
+    width: 400px; /* Set the desired width */
+    height: auto; /* Adjust height as needed */
+}
+
+/* Scrollable table */
+.scrollable-table {
+    max-height: 300px; /* Set a maximum height for the table to allow scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Fixed position buttons */
+.fixed-buttons {
+    position: sticky;
+    bottom: 0;
+    background-color: white; /* Optional: Add a background color to the buttons area */
+    padding: 10px 0; /* Optional: Add some padding */
+}
+
+/* Multiline text class to handle long text */
+.multiline-text {
+    white-space: normal; /* Allow text to wrap within the cell */
+    word-wrap: break-word; /* Break long words to wrap within the cell */
+}
