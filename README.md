@@ -1,38 +1,50 @@
-Dear Veronika and Tanmay,
+Overview
+This project involves three main challenges:
 
-I would like to sincerely thank you for providing me with the opportunity to work on these challenges. It has been a truly enjoyable and rewarding experience, and I am hopeful that the solutions I've implemented meet your expectations.
+Lightning Web Component and File Creation
 
-Please allow me to provide a brief overview of how I approached each challenge:
+Permission Set Swapping
+
+Custom Picklist and Flow
 
 Challenge 1: Lightning Web Component and File Creation
-
-For this challenge, we have successfully completed the task using a Lightning Web Component. While this task can also be accomplished using Flow, I opted for LWC as Challenge 3 already involves working with Flow.
-
-The solution involves linking the displayed records (Account_Contract_Clause) to the newly created Account_Contract records. Additionally, a .txt file is generated and stored in the Account_Contract__c record, which is created in this process. While I've implemented the .txt file generation, it is also possible to create .csv or .pdf files, depending on your requirements.
+For this challenge, the task was completed using a Lightning Web Component (LWC). The solution involves linking the displayed records (Account_Contract_Clause) to the newly created Account_Contract records. Additionally, a .txt file is generated and stored in the Account_Contract__c record created in this process. The file format can be adapted to .csv or .pdf based on requirements.
 
 Challenge 2: Permission Set Swapping
+This challenge can be approached manually or automatically via an Apex Class.
 
-This challenge can be approached in two ways: manually or automatically via an Apex Class.
+Manual Approach
+Basic Access: Read permissions for Account, Account_Contract__c, and Account_Contract_Clause__c objects and their fields.
 
-Manual Approach:
-You have already created the following permission sets:
+Advanced Access: Read, Create, Edit, and Delete permissions for the same objects and their fields.
 
-Basic Access: Provides Read permissions for the Account, Account_Contract__c, and Account_Contract_Clause__c objects and their fields.
-Advanced Access: Provides Read, Create, Edit, and Delete permissions for the same objects and their fields.
-Steps for swapping permissions manually:
+Steps:
 
 Export the current object and field permissions using Data Loader.
+
 Modify the exported CSV files to swap the permissions between Basic Access and Advanced Access.
+
 Update the permissions in Salesforce by loading the modified files using Data Loader.
-Verify the changes to ensure that the permissions have been successfully swapped.
-Automatic Approach (Apex):
-For automating the process, I have written an Apex class named PermissionSetSwapper, which is available in the GitHub repository ("Flix-Project"). While I do not recommend directly using this in a production environment, I have also provided a corresponding test class for your reference.
-If you prefer, you can also run the same logic directly using the Apex Execute Anonymous window.
+
+Verify the changes to ensure successful swapping.
+
+Automatic Approach (Apex)
+An Apex class named PermissionSetSwapper is available in the GitHub repository ("Flix-Project"). A corresponding test class is provided for reference. This logic can be run using the Apex Execute Anonymous window.
 
 Challenge 3: Custom Picklist and Flow
+A custom picklist called ‘Status’ was created on the Account object with a corresponding Path. Additionally, a flow named ‘Account || Email to the Owner’ was set up to trigger an email whenever the status is updated, and the record's status change is assigned to the record owner.
 
-For this challenge, I have successfully created a custom picklist called ‘Status’ on the Account object and set up a corresponding Path for it. Additionally, I have created a flow named ‘Account || Email to the Owner’, which triggers an email whenever the status is updated and the record's status change is assigned to the record owner.
+Installation Instructions
+1 . Clone the repository:
+    git clone https://github.com/Nishant4121988/Flix-Project.git
+    cd Flix-Project
 
-Once again, I truly appreciate the opportunity to work on this project. It was a great learning experience, and I hope the solutions provided meet your expectations. Please feel free to reach out if you have any further questions or if there are any additional tasks I can assist with.
+2. Deploy the metadata to Salesforce:
+    sfdx force:source:deploy -p src
 
-Looking forward to hearing your feedback!
+Running Tests
+Open the Salesforce Developer Console.
+
+Navigate to Setup > Apex Test Execution.
+
+Select the AccountContractControllerTest class and run the tests.
