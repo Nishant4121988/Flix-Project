@@ -14,6 +14,7 @@ Challenge 2: Permission Set Swapping
 This challenge can be approached manually or automatically via an Apex Class.
 
 Manual Approach
+
 Basic Access: Read permissions for Account, Account_Contract__c, and Account_Contract_Clause__c objects and their fields.
 
 Advanced Access: Read, Create, Edit, and Delete permissions for the same objects and their fields.
@@ -29,9 +30,11 @@ Update the permissions in Salesforce by loading the modified files using Data Lo
 Verify the changes to ensure successful swapping.
 
 Automatic Approach (Apex)
+
 An Apex class named PermissionSetSwapper is available in the GitHub repository ("Flix-Project"). A corresponding test class is provided for reference. This logic can be run using the Apex Execute Anonymous window.
 
 Challenge 3: Custom Picklist and Flow
+
 A custom picklist called ‘Status’ was created on the Account object with a corresponding Path. Additionally, a flow named ‘Account || Email to the Owner’ was set up to trigger an email whenever the status is updated, and the record's status change is assigned to the record owner.
 
 Installation Instructions
