@@ -43,7 +43,7 @@ Installation Instructions
     cd Flix-Project
 
 2. Deploy the metadata to Salesforce:
-    sfdx force:source:deploy -p src
+    sfdx force:source:deploy -p force-app
 
 Running Tests
 Open the Salesforce Developer Console.
