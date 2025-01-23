@@ -48,6 +48,5 @@ Installation Instructions
 Running Tests
 Open the Salesforce Developer Console.
 
-Navigate to Setup > Apex Test Execution.
-
 Select the AccountContractControllerTest class and run the tests.
+Select the PermissionSetSwapperTest class and run the tests.
